@@ -1,23 +1,22 @@
 import { ITestimonial } from "@/types";
-import { siteDetails } from "./siteDetails";
 
 export const testimonials: ITestimonial[] = [
     {
-        name: 'John Smith',
-        role: 'CEO at Company',
-        message: `${siteDetails.siteName}'s AI-driven insights have transformed how we approach financial planning for our clients. It's an invaluable resource in the modern financial landscape.`,
-        avatar: '/images/testimonial-1.webp',
+        name: 'Пилотный проект',
+        role: 'Яндекс Директ · 10 дней',
+        message: 'Настроили Яндекс Директ для ключевых запросов эвакуации. Создали посадочную страницу на платформе Яндекс Бизнес. Настроили связку «реклама → посадочная → заявка». Результат: ТОП-1 в Яндексе, 22 звонка, 6 заказов, 50 000 ₽ выручки.',
+        avatar: '/top1-screenshot.jpg',
     },
     {
-        name: 'Jane Doe',
-        role: 'CTO at Startup',
-        message: `As a CTO, I'm impressed by ${siteDetails.siteName}'s robust security measures and seamless integrations. It's rare to find an app that balances user-friendliness with such advanced technology.`,
-        avatar: '/images/testimonial-2.webp',
+        name: 'Эвакуация — ТОП-1',
+        role: 'Яндекс · Мобильный поиск',
+        message: 'Позиция #1 в Яндексе по запросу «эвакуатор Челябинск». Опережаете всех конкурентов в рекламной выдаче. Стабильный поток заявок при оптимальной стоимости клика.',
+        avatar: '/photo-1.jpg',
     },
     {
-        name: 'Emily Johnson',
-        role: 'Product Manager',
-        message: `${siteDetails.siteName} is revolutionizing personal finance management. Its intuitive design and powerful features make it an indispensable tool for anyone serious about financial growth.`,
-        avatar: '/images/testimonial-3.webp',
+        name: 'Аварийный комиссар — ТОП-1',
+        role: 'Вторая ниша ССД',
+        message: 'Вторая ниша ООО «ССД» — тоже ТОП-1 в Яндексе. Вывели параллельно с эвакуацией — стратегия работает масштабно. Единая стратегия, общая аналитика, максимальный охват аудитории Челябинска.',
+        avatar: '/photo-3.jpg',
     },
 ];

@@ -1,72 +1,72 @@
-import { FiBarChart2, FiBriefcase, FiDollarSign, FiLock, FiPieChart, FiShield, FiTarget, FiTrendingUp, FiUser } from "react-icons/fi";
+import { FiLayout, FiMapPin, FiSearch, FiTarget, FiTrendingUp, FiUsers, FiCode, FiCheckCircle } from "react-icons/fi";
 
 import { IBenefit } from "@/types"
 
 export const benefits: IBenefit[] = [
     {
-        title: "Smart Budgeting",
-        description: "Take the guesswork out of managing your money. Our AI-powered budgeting tool adapts to your lifestyle and helps you stay on track.",
+        title: "Современный сайт",
+        description: "Отдельные страницы для каждой услуги, прозрачные тарифы и кнопка «Позвонить» на видном месте. Оптимизирован под мобильные — 90% клиентов звонят с телефона.",
         bullets: [
             {
-                title: "Intelligent Categorization",
-                description: "Automatically sorts your transactions for crystal-clear insights.",
-                icon: <FiBarChart2 size={26} />
+                title: "Эвакуация, аварийный комиссар, техпомощь",
+                description: "Отдельная страница для каждого направления с тарифами и описанием.",
+                icon: <FiLayout size={26} />
             },
             {
-                title: "Customizable Goals",
-                description: "Set and track financial objectives that matter to you.",
+                title: "Конверсия в заявку с первого визита",
+                description: "Прозрачные тарифы и кнопка «Позвонить» на видном месте.",
                 icon: <FiTarget size={26} />
             },
             {
-                title: "Predictive Analysis",
-                description: "Get ahead of your finances with spending forecasts and alerts.",
+                title: "Мобильная адаптация",
+                description: "90% клиентов звонят с телефона — сайт оптимизирован под мобильные.",
+                icon: <FiUsers size={26} />
+            }
+        ],
+        imageSrc: "/photo-1.jpg"
+    },
+    {
+        title: "Яндекс Карты и Бизнес",
+        description: "Полный профиль ООО «ССД»: услуги, фото, часы работы, описание. Система сбора отзывов, рост рейтинга. Вы в ТОП-3 на картах при поиске «эвакуатор рядом».",
+        bullets: [
+            {
+                title: "Полный бизнес-профиль",
+                description: "Все услуги, описание, УТП, 10–15 фотографий техники.",
+                icon: <FiMapPin size={26} />
+            },
+            {
+                title: "Система работы с отзывами",
+                description: "Шаблоны ответов, стимулирование, рост рейтинга.",
+                icon: <FiCheckCircle size={26} />
+            },
+            {
+                title: "Регулярные публикации",
+                description: "Акции и публикации для поддержания активности профиля.",
                 icon: <FiTrendingUp size={26} />
             }
         ],
-        imageSrc: "/images/mockup-1.webp"
+        imageSrc: "/photo-3.jpg"
     },
     {
-        title: "Seamless Investing",
-        description: "Start building wealth today, no financial degree required. Finwise makes investing accessible and straightforward.",
+        title: "SEO и контент + Яндекс Директ",
+        description: "Техническая оптимизация, продвижение по ключевым запросам, экспертные статьи. Параллельно — две кампании Яндекс Директ для максимального охвата.",
         bullets: [
             {
-                title: "Micro-Investing",
-                description: "Begin with as little as $1 and watch your money grow.",
-                icon: <FiDollarSign size={26} />
+                title: "SEO-оптимизация",
+                description: "Метатеги, микроразметка, 200+ ключевых запросов, контент-маркетинг.",
+                icon: <FiSearch size={26} />
             },
             {
-                title: "Expert Portfolios",
-                description: "Choose from investment strategies tailored to your risk tolerance.",
-                icon: <FiBriefcase size={26} />
+                title: "Яндекс Директ",
+                description: "Две кампании: эвакуация + аварийный комиссар. Только Челябинск.",
+                icon: <FiTarget size={26} />
             },
             {
-                title: "Real-Time Performance",
-                description: "Track your investments with easy-to-understand metrics and visuals.",
-                icon: <FiPieChart size={26} />
+                title: "Окупаемость 1:5",
+                description: "Постоянная оптимизация, снижение стоимости клика, рост ROI.",
+                icon: <FiCode size={26} />
             }
         ],
-        imageSrc: "/images/mockup-2.webp"
-    },
-    {
-        title: "Bank-Grade Security",
-        description: "Your financial data deserves the best protection. Rest easy knowing Finwise employs cutting-edge security measures.",
-        bullets: [
-            {
-                title: "Military-Grade Encryption",
-                description: "Your information is safeguarded with the highest level of encryption.",
-                icon: <FiLock size={26} />
-            },
-            {
-                title: "Biometric Authentication",
-                description: "Access your account securely with fingerprint or facial recognition.",
-                icon: <FiUser size={26} />
-            },
-            {
-                title: "Real-Time Fraud Detection",
-                description: "Our system constantly monitors for suspicious activity to keep your money safe.",
-                icon: <FiShield size={26} />
-            }
-        ],
-        imageSrc: "/images/mockup-1.webp"
+        imageSrc: "/top1-screenshot.jpg"
     },
 ]

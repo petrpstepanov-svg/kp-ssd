@@ -1,25 +1,24 @@
 import { IFAQ } from "@/types";
-import { siteDetails } from "./siteDetails";
 
 export const faqs: IFAQ[] = [
     {
-        question: `Is ${siteDetails.siteName} secure?`,
-        answer: 'Absolutely. We use bank-level encryption to protect your data and never store your login information. Plus, our biometric authentication adds an extra layer of security.',
+        question: 'Почему именно сейчас?',
+        answer: 'Конкуренты уже занимают ТОП — каждый день без сайта и рекламы = упущенные клиенты и деньги. Летний сезон — рост числа аварий и спроса на эвакуацию. Данные тестовой кампании актуальны сейчас — через месяц конкуренция может вырасти.',
     },
     {
-        question: `Can I use ${siteDetails.siteName} on multiple devices?`,
-        answer: 'Absolutely! Your Finwise account syncs seamlessly across all your devices - smartphone, tablet, and computer.',
+        question: 'Какие гарантии результата?',
+        answer: 'Мы уже подтвердили результат на пилотном проекте: ТОП-1 в Яндексе, 22 звонка и 50 000 ₽ выручки за 10 дней при вложениях 10 500 ₽. ROI 1:5 — это реальные цифры, а не прогнозы.',
     },
     {
-        question: 'Can I connect all my bank accounts?',
-        answer: `Yes! ${siteDetails.siteName} supports connections with over 10,000 financial institutions worldwide. Simply log in through our secure portal to link your accounts.`
+        question: 'Сколько времени займёт запуск?',
+        answer: 'Первые результаты — через 3 месяца: новый сайт запущен, Директ оптимизирован, Яндекс Карты настроены. Через 6 месяцев — SEO: 6–10 заказов/мес, экономия 15–25 тыс. ₽/мес. Через 12 месяцев — автономный SEO-канал и расширение на смежные ниши.',
     },
     {
-        question: 'Do I need any financial expertise to use the investing features?',
-        answer: 'Not at all! Our expert-curated portfolios and educational resources make investing accessible to everyone, regardless of experience level.',
+        question: 'Что входит в полный комплекс за 80 000 ₽?',
+        answer: 'Профессиональный SEO-сайт, комплексная SEO-оптимизация (200+ запросов), Яндекс Карты и Бизнес-профиль, настройка Яндекс Директ (2 кампании), интеграция и аналитика. Единоразовый платёж без абонентской платы и скрытых комиссий.',
     },
     {
-        question: 'What if I need help using the app?',
-        answer: 'Our dedicated support team is available 24/7 via chat or email. Plus, we offer extensive in-app tutorials and a comprehensive knowledge base to help you make the most of Finwise.'
+        question: 'Кто будет вести проект?',
+        answer: 'Прямое общение с разработчиком. Решения за часы, а не за дни. Никаких аккаунт-менеджеров между вами и результатом. Сопровождаем до первых заявок — следим за конверсией, оптимизируем, вносим правки.',
     }
 ];

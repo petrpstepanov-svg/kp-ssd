@@ -1,5 +1,5 @@
 export const heroDetails = {
-    heading: 'Smart, Secure, Simple Financial Management',
-    subheading: 'From effortless budgeting to real-time investment insights, Finwise puts you in control of your money like never before',
-    centerImageSrc: '/images/hero-mockup.webp',
+    heading: 'Выведем ООО «ССД» в ТОП-1 по эвакуации в Челябинске',
+    subheading: 'Проблема: Автомобилисты Челябинска ищут эвакуатор — и находят ваших конкурентов. Решение: Мы уже проверили стратегию на пилотном проекте и готовы масштабировать результат.',
+    centerImageSrc: '/photo-3.jpg',
 }

@@ -1,10 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import React from 'react';
-import { FaFingerprint } from 'react-icons/fa';
 
 import { siteDetails } from '@/data/siteDetails';
 import { footerDetails } from '@/data/footer';
-import { getPlatformIconByName } from '@/utils';
 
 const Footer: React.FC = () => {
     return (
@@ -12,7 +11,7 @@ const Footer: React.FC = () => {
             <div className="max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div>
                     <Link href="/" className="flex items-center gap-2">
-                        <FaFingerprint className="min-w-fit w-5 h-5 md:w-7 md:h-7" />
+                        <Image src="/logo-ssd.svg" alt={siteDetails.siteName} width={28} height={28} />
                         <h3 className="manrope text-xl font-semibold cursor-pointer">
                             {siteDetails.siteName}
                         </h3>
@@ -22,7 +21,7 @@ const Footer: React.FC = () => {
                     </p>
                 </div>
                 <div>
-                    <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+                    <h4 className="text-lg font-semibold mb-4">Навигация</h4>
                     <ul className="text-foreground-accent">
                         {footerDetails.quickLinks.map(link => (
                             <li key={link.text} className="mb-2">
@@ -32,35 +31,23 @@ const Footer: React.FC = () => {
                     </ul>
                 </div>
                 <div>
-                    <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+                    <h4 className="text-lg font-semibold mb-4">Контакты</h4>
 
-                    {footerDetails.email && <a href={`mailto:${footerDetails.email}`}  className="block text-foreground-accent hover:text-foreground">Email: {footerDetails.email}</a>}
+                    {footerDetails.telephone && <a href={`tel:${footerDetails.telephone.replace(/[^\d+]/g, '')}`} className="block text-foreground-accent hover:text-foreground">📞 {footerDetails.telephone}</a>}
 
-                    {footerDetails.telephone && <a href={`tel:${footerDetails.telephone}`} className="block text-foreground-accent hover:text-foreground">Phone: {footerDetails.telephone}</a>}
+                    {footerDetails.address && <p className="block text-foreground-accent mt-2">📍 {footerDetails.address}</p>}
 
-                    {footerDetails.socials && (
-                        <div className="mt-5 flex items-center gap-5 flex-wrap">
-                            {Object.keys(footerDetails.socials).map(platformName => {
-                                if (platformName && footerDetails.socials[platformName]) {
-                                    return (
-                                        <Link
-                                            href={footerDetails.socials[platformName]}
-                                            key={platformName}
-                                            aria-label={platformName}
-                                        >
-                                            {getPlatformIconByName(platformName)}
-                                        </Link>
-                                    )
-                                }
-                            })}
-                        </div>
-                    )}
+                    {footerDetails.companyName && <p className="block text-foreground-accent mt-2">🏢 {footerDetails.companyName}</p>}
                 </div>
             </div>
             <div className="mt-8 md:text-center text-foreground-accent px-6">
-                <p>Copyright &copy; {new Date().getFullYear()} {siteDetails.siteName}. All rights reserved.</p>
-                <p className="text-sm mt-2 text-gray-500">Made with &hearts; by <a href="https://nexilaunch.com" target="_blank">Nexi Launch</a></p>
-                <p className="text-sm mt-2 text-gray-500">UI kit by <a href="https://ui8.net/youthmind/products/fintech-finance-mobile-app-ui-kit" target="_blank">Youthmind</a></p>
+                <div className="flex items-center justify-center gap-3 mb-3">
+                    <Image src="/logo-ssd.svg" alt="ООО «ССД»" width={24} height={24} className="opacity-60" />
+                    <span className="text-sm text-gray-500">Коммерческое предложение</span>
+                    <span className="text-sm text-gray-400">от</span>
+                    <Image src="/logo-tochka.svg" alt="Точка+" width={20} height={20} className="opacity-60" />
+                </div>
+                <p className="text-sm text-gray-500">{footerDetails.author}</p>
             </div>
         </footer>
     );

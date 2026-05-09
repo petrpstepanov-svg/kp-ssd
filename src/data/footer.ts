@@ -5,33 +5,30 @@ export const footerDetails: {
     quickLinks: IMenuItem[];
     email: string;
     telephone: string;
+    address: string;
+    companyName: string;
+    author: string;
     socials: ISocials;
 } = {
-    subheading: "Empowering businesses with cutting-edge financial technology solutions.",
+    subheading: "Коммерческое предложение по интернет-маркетингу для ООО «ССД». Эвакуация и аварийный комиссар в Челябинске.",
     quickLinks: [
         {
-            text: "Features",
+            text: "Услуги",
             url: "#features"
         },
         {
-            text: "Pricing",
+            text: "Цены",
             url: "#pricing"
         },
         {
-            text: "Testimonials",
+            text: "Результаты",
             url: "#testimonials"
         }
     ],
-    email: 'address@yoursite.com',
-    telephone: '+1 (123) 456-7890',
-    socials: {
-        // github: 'https://github.com',
-        // x: 'https://twitter.com/x',
-        twitter: 'https://twitter.com/Twitter',
-        facebook: 'https://facebook.com',
-        // youtube: 'https://youtube.com',
-        linkedin: 'https://www.linkedin.com',
-        // threads: 'https://www.threads.net',
-        instagram: 'https://www.instagram.com',
-    }
+    email: '',
+    telephone: '+7 (908) 055-55-55',
+    address: 'г. Челябинск, пр. Ленина, 27, стр. 4',
+    companyName: 'ООО «ССД»',
+    author: 'Степанов П.П. · Точка+ · Май 2026',
+    socials: {}
 }

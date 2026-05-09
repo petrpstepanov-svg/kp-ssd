@@ -1,12 +1,12 @@
 export const siteDetails = {
-    siteName: 'Finwise',
-    siteUrl: 'https://finwise-omega.vercel.app/',
+    siteName: 'ООО «ССД»',
+    siteUrl: 'https://petrpstepanov-svg.github.io/kp-ssd/',
     metadata: {
-        title: 'Finwise - Next.js and Tailwind CSS Landing Page Template',
-        description: 'Finwise empowers businesses with cutting-edge technology solutions to drive success and efficiency.',
+        title: 'ООО «ССД» — Эвакуатор и Аварийный комиссар в Челябинске | ТОП-1 в Яндексе',
+        description: 'Коммерческое предложение для ООО «ССД». Выведем в ТОП-1 по эвакуации в Челябинске. ROI 1:5 за 10 дней. Полный комплекс интернет-маркетинга.',
     },
-    language: 'en-us',
-    locale: 'en-US',
-    siteLogo: `${process.env.BASE_PATH || ''}/images/logo.png`, // or use a string for the logo e.g. "TechStartup"
-    googleAnalyticsId: '', // e.g. G-XXXXXXX,
+    language: 'ru',
+    locale: 'ru-RU',
+    siteLogo: `${process.env.BASE_PATH || ''}/logo-ssd.svg`,
+    googleAnalyticsId: '',
 }

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 50" fill="none">
+  <rect x="0" y="5" width="40" height="40" rx="6" fill="#F97316"/>
+  <path d="M20 12 L20 32 M14 18 Q20 15 26 18 M14 24 Q20 21 26 24" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <text x="50" y="25" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="white">ООО «ССД»</text>
+  <text x="50" y="42" font-family="Inter, Arial, sans-serif" font-size="10" fill="#94A3B8">ПОМОЩЬ НА ДОРОГЕ</text>
+</svg>
