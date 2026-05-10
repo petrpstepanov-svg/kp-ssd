@@ -19,10 +19,6 @@ export const footerDetails: {
         {
             text: "Цены",
             url: "#pricing"
-        },
-        {
-            text: "Результаты",
-            url: "#testimonials"
         }
     ],
     email: '',
