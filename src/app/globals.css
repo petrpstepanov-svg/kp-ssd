@@ -291,3 +291,39 @@ section[id="about"] > div > div > *,
     transition-all duration-500
     hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-100/40;
 }
+
+/* ====== Блок 7: Pricing premium enhancements ====== */
+
+/* Карточка «Запуск» */
+.pricing-card-launch {
+  @apply rounded-2xl border-2 border-orange-300 bg-white shadow-lg overflow-hidden
+    border-t-4 border-t-orange-400
+    transition-all duration-300
+    hover:shadow-xl hover:shadow-orange-100/40 hover:-translate-y-1;
+}
+
+/* Карточка «Сопровождение» */
+.pricing-card-maintenance {
+  @apply rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden
+    border-t-4 border-t-orange-300
+    transition-all duration-300
+    hover:shadow-lg hover:-translate-y-0.5;
+}
+
+/* Пункт «Сопровождения» — мини-карточка */
+.pricing-bullet-card {
+  @apply rounded-xl bg-gray-50/70 border border-gray-100
+    px-4 py-3
+    border-l-4 border-l-orange-400
+    transition-all duration-300
+    hover:-translate-y-0.5 hover:shadow-sm hover:bg-white;
+}
+
+/* Рекламный бюджет — conclusion-card */
+.pricing-adbudget-card {
+  @apply rounded-2xl border border-orange-200
+    bg-gradient-to-r from-orange-50 to-white
+    px-6 py-5 md:px-8 md:py-6
+    mt-8 max-w-3xl mx-auto
+    border-l-4 border-l-orange-400;
+}

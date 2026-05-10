@@ -1,6 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+import {
+    HiChevronDown,
+    HiCheckCircle,
+    HiArrowTrendingUp,
+} from 'react-icons/hi2';
 import { pricingData } from '@/data/pricingNew';
 
 /* ------------------------------------------------------------------ */
@@ -26,13 +32,11 @@ const AccordionSection = ({
         className="flex w-full items-center justify-between py-4 text-left"
       >
         <span className="text-lg font-semibold text-foreground">{title}</span>
-        <span
-          className={`ml-2 shrink-0 text-gray-400 transition-transform duration-200 ${
+        <HiChevronDown
+          className={`ml-2 shrink-0 w-5 h-5 text-gray-400 transition-transform duration-200 ${
             open ? 'rotate-180' : ''
           }`}
-        >
-          ▼
-        </span>
+        />
       </button>
 
       {/* Список пунктов */}
@@ -40,7 +44,7 @@ const AccordionSection = ({
         <ul className="space-y-2 mt-0 pb-4">
           {items.map((item, i) => (
             <li key={i} className="flex items-start gap-2">
-              <span className="mt-0.5 shrink-0 text-orange-500 font-bold">✓</span>
+              <HiCheckCircle className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
               <span className="text-sm text-foreground-accent">{item}</span>
             </li>
           ))}
@@ -58,17 +62,30 @@ const PricingNew: React.FC = () => {
 
   return (
     <div className="w-full">
+      {/* Номер секции */}
+      <motion.span
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5 }}
+          className="text-sm font-bold text-orange-500/60 tracking-widest uppercase text-center block mb-6"
+      >
+          07 — Стоимость
+      </motion.span>
+
       {/* ---- Две карточки: Запуск + Сопровождение ---- */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* ========== Карточка «Запуск» ========== */}
-        <div className="rounded-2xl border-2 border-orange-300 bg-white shadow-lg overflow-hidden">
+        <div className="pricing-card-launch">
           {/* Верхняя часть */}
           <div className="px-6 pt-6 pb-4">
-            {/* Лейбл */}
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-orange-100 px-3 py-1 text-sm font-semibold text-orange-700">
-              <span>{launch.labelIcon}</span>
-              {launch.label}
-            </span>
+            {/* Лейбл — side-tag */}
+            <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
+                    {launch.labelIcon}
+                </div>
+                <span className="text-sm font-semibold text-orange-700">{launch.label}</span>
+            </div>
 
             {/* Цена */}
             <p className="mt-4 text-4xl md:text-5xl font-bold text-orange-500">
@@ -96,14 +113,16 @@ const PricingNew: React.FC = () => {
         </div>
 
         {/* ========== Карточка «Сопровождение» ========== */}
-        <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+        <div className="pricing-card-maintenance">
           {/* Верхняя часть */}
           <div className="px-6 pt-6 pb-4">
-            {/* Лейбл */}
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700">
-              <span>{maintenance.labelIcon}</span>
-              {maintenance.label}
-            </span>
+            {/* Лейбл — side-tag */}
+            <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+                    {maintenance.labelIcon}
+                </div>
+                <span className="text-sm font-semibold text-gray-700">{maintenance.label}</span>
+            </div>
 
             {/* Цена */}
             <p className="mt-4 text-4xl md:text-5xl font-bold text-foreground">
@@ -117,23 +136,24 @@ const PricingNew: React.FC = () => {
             </p>
           </div>
 
-          {/* Список пунктов — без аккордеона */}
-          <div className="px-6 pb-4">
+          {/* Список пунктов — мини-карточки */}
+          <div className="px-6 pb-4 space-y-3">
             {maintenance.items.map((item, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-3 py-3 border-b border-gray-100 last:border-0"
-              >
-                <span className="text-xl shrink-0">{item.icon}</span>
-                <span className="text-sm text-foreground-accent">{item.text}</span>
-              </div>
+                <div key={i} className="pricing-bullet-card">
+                    <div className="flex items-start gap-3">
+                        <div className="w-9 h-9 rounded-lg bg-orange-50 flex items-center justify-center flex-shrink-0 text-orange-500">
+                            {item.icon}
+                        </div>
+                        <span className="text-sm text-foreground-accent pt-1.5">{item.text}</span>
+                    </div>
+                </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* ---- Рекламный бюджет — плашка ---- */}
-      <div className="rounded-2xl bg-gray-50 border border-gray-200 px-6 py-5 md:px-8 md:py-6 mt-8 max-w-3xl mx-auto">
+      {/* ---- Рекламный бюджет — conclusion-card ---- */}
+      <div className="pricing-adbudget-card">
         {/* Заголовок */}
         <h3 className="text-lg font-semibold text-foreground">
           {adBudget.title}
@@ -145,12 +165,13 @@ const PricingNew: React.FC = () => {
           {adBudget.items.map((item, i) => (
             <div
               key={i}
-              className="flex items-center justify-between py-3 border-b border-gray-200 last:border-0"
+              className="flex items-center justify-between py-3 border-b border-orange-100 last:border-0"
             >
               {/* Левая часть */}
               <div>
-                <span className="text-foreground font-medium">
-                  {i === 0 ? '🚗' : '🛡'} {item.label}
+                <span className="text-foreground font-medium flex items-center gap-2">
+                    <span className="text-orange-500">{item.icon}</span>
+                    {item.label}
                 </span>
                 <p className="text-xs text-gray-400 mt-0.5">{item.description}</p>
               </div>
@@ -162,13 +183,30 @@ const PricingNew: React.FC = () => {
           ))}
 
           {/* Итого */}
-          <div className="flex items-center justify-between pt-4 mt-1">
+          <div className="flex items-center justify-between pt-4 mt-1 border-t border-orange-200">
             <div>
-              <span className="font-bold text-orange-500">{adBudget.total}</span>
-              <p className="text-xs text-foreground mt-0.5">{adBudget.totalDescription}</p>
+              <span className="text-lg font-bold text-orange-600">{adBudget.total}</span>
+              <p className="text-xs text-foreground-accent mt-0.5">{adBudget.totalDescription}</p>
+            </div>
+            <div className="w-9 h-9 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
+              <HiArrowTrendingUp className="w-5 h-5 text-orange-500" />
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Волна-разделитель */}
+      <div className="relative left-0 right-0 overflow-hidden leading-[0] -mb-1 -mx-6 md:-mx-8 mt-12">
+        <svg
+            viewBox="0 0 1440 80"
+            preserveAspectRatio="none"
+            className="relative block w-full h-[40px] md:h-[60px]"
+        >
+            <path
+                d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z"
+                fill="#ffffff"
+            />
+        </svg>
       </div>
     </div>
   );
