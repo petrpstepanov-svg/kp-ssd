@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { HiCheckCircle } from 'react-icons/hi2';
 import { aboutUsData } from '@/data/aboutUs';
 
 const fadeUp = {
@@ -13,8 +14,33 @@ const AboutUs: React.FC = () => {
   const { heading, subheading, person, checklist, advantages } = aboutUsData;
 
   return (
-    <section id="about" className="bg-white py-16 md:py-24 px-5 md:px-8">
+    <section id="about" className="relative overflow-x-hidden bg-white py-16 md:py-24 px-5 md:px-8">
+      {/* Волна-переход: предыдущий блок → белый фон */}
+      <div className="relative left-0 right-0 overflow-hidden leading-[0] -mt-1 -mx-5 md:-mx-8">
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          className="relative block w-full h-[40px] md:h-[60px]"
+        >
+          <path
+            d="M0,40 C360,0 720,80 1080,40 C1260,20 1380,30 1440,40 L1440,80 L0,80 Z"
+            fill="#ffffff"
+          />
+        </svg>
+      </div>
+
       <div className="max-w-6xl mx-auto">
+        {/* Номер секции */}
+        <motion.span
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5 }}
+          className="text-sm font-bold text-orange-500/60 tracking-widest uppercase text-center lg:text-left block mb-4"
+        >
+          08 — О нас
+        </motion.span>
+
         {/* Заголовок */}
         <motion.h2
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground text-center lg:text-left"
@@ -46,29 +72,31 @@ const AboutUs: React.FC = () => {
         >
           {/* Фото */}
           <div className="flex flex-col items-center lg:items-start shrink-0">
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="about-photo-frame group">
               <Image
                 src={person.photo}
                 alt={person.photoAlt}
                 width={224}
                 height={280}
-                className="object-cover w-48 md:w-56 h-auto"
+                className="object-cover w-48 md:w-56 h-auto transition-transform duration-500 group-hover:scale-[1.03]"
               />
             </div>
             <p className="text-lg font-bold text-foreground text-center lg:text-left mt-4">
               {person.name}
             </p>
-            <p className="text-sm text-gray-500 text-center lg:text-left">
+            <p className="text-sm font-medium text-orange-600 text-center lg:text-left">
               {person.role}
             </p>
           </div>
 
           {/* Чеклист */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             {checklist.map((item, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <span className="text-orange-500 font-bold text-lg flex-shrink-0">✓</span>
-                <span className="text-base text-foreground">{item}</span>
+              <div key={i} className="about-checklist-card">
+                <div className="flex items-center gap-3">
+                  <HiCheckCircle className="w-5 h-5 text-orange-500 shrink-0" />
+                  <span className="text-base text-foreground">{item}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -79,15 +107,21 @@ const AboutUs: React.FC = () => {
           {advantages.map((adv, i) => (
             <motion.div
               key={i}
-              className="rounded-xl bg-gray-50 border border-gray-100 p-5"
+              className="about-advantage-card"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-50px' }}
             >
-              <span className="text-2xl">{adv.icon}</span>
-              <h3 className="text-lg font-semibold text-foreground mt-2">{adv.title}</h3>
-              <p className="text-sm text-foreground-accent mt-1">{adv.description}</p>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center flex-shrink-0 text-orange-500">
+                  {adv.icon}
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground">{adv.title}</h3>
+                  <p className="text-sm text-foreground-accent mt-1 leading-relaxed">{adv.description}</p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
