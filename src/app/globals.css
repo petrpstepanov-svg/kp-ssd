@@ -95,3 +95,28 @@ section[id="about"] > div > div > *,
   @apply absolute -bottom-6 left-1/2 -translate-x-1/2 w-48 h-24
     bg-orange-400/20 rounded-full blur-2xl pointer-events-none;
 }
+
+/* ====== Блок 2: PilotProject premium enhancements ====== */
+
+/* Мини-карточка результата с левой оранжевой полоской */
+.result-card {
+  @apply rounded-xl bg-white border border-gray-100 shadow-sm px-4 py-3.5
+    border-l-4 border-l-orange-400
+    transition-all duration-300
+    hover:-translate-y-0.5 hover:shadow-md;
+}
+
+/* Кружок-иконка внутри result-card */
+.result-icon-circle {
+  @apply w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center
+    text-orange-500 flex-shrink-0;
+}
+
+/* Плашка «Вывод» — градиент + левая полоска */
+.conclusion-card {
+  @apply rounded-2xl border border-orange-200
+    bg-gradient-to-r from-orange-50 to-white
+    px-6 py-5 md:px-8 md:py-6
+    border-l-4 border-l-orange-400
+    lg:text-left text-center;
+}
