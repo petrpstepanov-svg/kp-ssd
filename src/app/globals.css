@@ -61,6 +61,8 @@ section[id="pilot"] > div > *,
 section[id="pilot"] > div > div > *,
 section[id="results"] > div > *,
 section[id="results"] > div > div > *,
+section[id="what-you-get"] > div > *,
+section[id="what-you-get"] > div > div > *,
 .benefit-section > div {
   opacity: 1 !important;
   transform: none !important;
