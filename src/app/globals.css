@@ -73,3 +73,25 @@ section[id="about"] > div > div > *,
   opacity: 1 !important;
   transform: none !important;
 }
+
+/* ====== Блок 1: Header + Hero premium enhancements ====== */
+
+/* Hover-анимация для навигации — оранжевая полоска снизу */
+.nav-link-hover {
+  @apply relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px]
+    after:bg-orange-500 after:rounded-full
+    after:scale-x-0 after:origin-left hover:after:scale-x-100
+    after:transition-transform after:duration-300;
+}
+
+/* Стат-карточка с оранжевой левой полоской */
+.stat-card-premium {
+  @apply border-l-4 border-l-orange-400 transition-all duration-300
+    hover:-translate-y-1 hover:shadow-md;
+}
+
+/* Оранжевый glow под мокапом телефона */
+.phone-glow {
+  @apply absolute -bottom-6 left-1/2 -translate-x-1/2 w-48 h-24
+    bg-orange-400/20 rounded-full blur-2xl pointer-events-none;
+}
