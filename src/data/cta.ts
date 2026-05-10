@@ -1,6 +1,6 @@
 export const ctaDetails = {
     heading: 'Готовы начать? Свяжитесь с нами!',
     subheading: 'Обсудим детали, подберём оптимальный вариант и запустим проект в работу. Каждый вложенный рубль возвращается пятикратно.',
-    appStoreUrl: 'tel:+79080555555',
-    googlePlayUrl: 'tel:+79080555555'
+    appStoreUrl: 'tel:+79217040966',
+    googlePlayUrl: 'tel:+79217040966'
 }

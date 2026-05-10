@@ -3,15 +3,43 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
-import { Transition } from '@headlessui/react';
-import { HiOutlineXMark, HiBars3 } from 'react-icons/hi2';
+import { HiPhone } from 'react-icons/hi2';
 
 import Container from './Container';
 import { siteDetails } from '@/data/siteDetails';
-import { menuItems } from '@/data/menuItems';
+
+/* ------------------------------------------------------------------ */
+/*  SVG-иконки мессенджеров                                           */
+/* ------------------------------------------------------------------ */
+
+const MaxIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 13.2c-.2.36-.64.48-1 .28l-2.78-1.6v3.2c0 .4-.34.72-.76.72s-.76-.32-.76-.72v-3.2l-2.78 1.6c-.36.2-.8.08-1-.28-.2-.36-.08-.8.28-1l2.78-1.6-2.78-1.6c-.36-.2-.48-.64-.28-1 .2-.36.64-.48 1-.28l2.78 1.6V8.52c0-.4.34-.72.76-.72s.76.32.76.72v3.2l2.78-1.6c.36-.2.8-.08 1 .28.2.36.08.8-.28 1l-2.78 1.6 2.78 1.6c.36.2.48.64.28 1z"/>
+    </svg>
+);
+
+const TelegramIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.92 6.2l-1.64 7.72c-.12.56-.44.68-.88.42l-2.44-1.8-1.18 1.14c-.12.12-.24.24-.48.24l.16-2.44 4.48-4.04c.2-.16-.04-.24-.28-.08l-5.52 3.48-2.38-.74c-.52-.16-.52-.52.12-.76l9.28-3.58c.44-.16.8.12.64.72z"/>
+    </svg>
+);
+
+/* ------------------------------------------------------------------ */
+/*  Данные контактов                                                   */
+/* ------------------------------------------------------------------ */
+
+const CONTACTS = {
+    phone: '+7 921 704-09-66',
+    phoneHref: 'tel:+79217040966',
+    maxUrl: 'https://max.ru/u/f9LHodD0cOLENBlukjoCKMDwG7ZiW1d5HByn2RRKSLguAFaemuOMAwmy0yc',
+    telegramUrl: 'https://t.me/Petr_Petrovich60',
+} as const;
+
+/* ------------------------------------------------------------------ */
+/*  Основной компонент                                                 */
+/* ------------------------------------------------------------------ */
 
 const Header: React.FC = () => {
-    const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -20,96 +48,70 @@ const Header: React.FC = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
-
     return (
         <header className="fixed top-0 left-0 right-0 z-50 mx-auto w-full transition-all duration-300">
-            {/* Оранжевая полоска 3px сверху */}
+            {/* Оранжевая полоска сверху */}
             <div className="h-[3px] bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 absolute top-0 left-0 right-0 z-[60]" />
 
             <Container className="!px-0">
                 <nav className={`
-                    mx-auto flex justify-between items-center py-2 px-5 md:py-10
+                    mx-auto flex justify-between items-center py-2 px-5
                     transition-all duration-300
                     ${scrolled
-                        ? 'md:bg-white/80 md:backdrop-blur-md md:shadow-sm md:py-4'
-                        : 'md:bg-transparent md:shadow-none'
+                        ? 'bg-white/80 backdrop-blur-md shadow-sm py-2'
+                        : 'bg-white shadow-md py-2'
                     }
-                    bg-white shadow-md
                 `}>
-                    {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2">
-                        <Image src="/logo-ssd.svg" alt={siteDetails.siteName} width={40} height={40} className="min-w-fit md:w-10 md:h-10" />
-                        <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
-                            {siteDetails.siteName}
-                        </span>
+                    {/* Logo — Точка+ */}
+                    <Link href="/" className="flex items-center">
+                        <Image
+                            src="/logo-tochka.svg"
+                            alt={siteDetails.siteName}
+                            width={160}
+                            height={36}
+                            className="h-7 md:h-8 w-auto"
+                            priority
+                        />
                     </Link>
 
-                    {/* Desktop Menu */}
-                    <ul className="hidden md:flex space-x-6 items-center">
-                        {menuItems.map(item => (
-                            <li key={item.text}>
-                                <Link href={item.url} className="nav-link-hover relative text-foreground hover:text-orange-500 transition-colors duration-200">
-                                    {item.text}
-                                </Link>
-                            </li>
-                        ))}
-                        <li>
-                            <a href="tel:+79080555555" className="text-white bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/25 hover:-translate-y-0.5">
-                                Позвонить
-                            </a>
-                        </li>
-                    </ul>
-
-                    {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center">
-                        <button
-                            onClick={toggleMenu}
-                            type="button"
-                            className="bg-primary text-white focus:outline-none rounded-full w-10 h-10 flex items-center justify-center"
-                            aria-controls="mobile-menu"
-                            aria-expanded={isOpen}
+                    {/* Кнопки связи — видны на всех экранах */}
+                    <div className="flex items-center gap-2 md:gap-2.5">
+                        {/* Макс */}
+                        <a
+                            href={CONTACTS.maxUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="header-contact-btn"
+                            title="Написать в Макс"
                         >
-                            {isOpen ? (
-                                <HiOutlineXMark className="h-6 w-6" aria-hidden="true" />
-                            ) : (
-                                <HiBars3 className="h-6 w-6" aria-hidden="true" />
-                            )}
-                            <span className="sr-only">Навигация</span>
-                        </button>
+                            <MaxIcon className="w-5 h-5" />
+                            <span className="hidden lg:inline text-xs font-medium">Макс</span>
+                        </a>
+
+                        {/* Телеграм */}
+                        <a
+                            href={CONTACTS.telegramUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="header-contact-btn"
+                            title="Написать в Telegram"
+                        >
+                            <TelegramIcon className="w-5 h-5" />
+                            <span className="hidden lg:inline text-xs font-medium">Telegram</span>
+                        </a>
+
+                        {/* Позвонить */}
+                        <a
+                            href={CONTACTS.phoneHref}
+                            className="header-phone-btn"
+                            title={CONTACTS.phone}
+                        >
+                            <HiPhone className="w-4 h-4 md:w-5 md:h-5" />
+                            <span className="hidden md:inline text-sm font-semibold">{CONTACTS.phone}</span>
+                        </a>
                     </div>
                 </nav>
             </Container>
-
-            {/* Mobile Menu with Transition */}
-            <Transition
-                show={isOpen}
-                enter="transition ease-out duration-200 transform"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="transition ease-in duration-75 transform"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-            >
-                <div id="mobile-menu" className="md:hidden bg-white shadow-lg">
-                    <ul className="flex flex-col space-y-4 pt-1 pb-6 px-6">
-                        {menuItems.map(item => (
-                            <li key={item.text}>
-                                <Link href={item.url} className="text-foreground hover:text-primary block" onClick={toggleMenu}>
-                                    {item.text}
-                                </Link>
-                            </li>
-                        ))}
-                        <li>
-                            <a href="tel:+79080555555" className="text-white bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit" onClick={toggleMenu}>
-                                Позвонить
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </Transition>
         </header>
     );
 };

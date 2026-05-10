@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" fill="none">
-  <text x="0" y="22" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="white">ТОЧКА</text>
-  <text x="70" y="22" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#FBBF24">+</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" fill="none">
+  <!-- Оранжевый кружок-точка -->
+  <circle cx="18" cy="20" r="14" fill="#F97316"/>
+  <!-- Белый плюс внутри кружка -->
+  <path d="M18 11 L18 29 M9 20 L27 20" stroke="white" stroke-width="2.8" stroke-linecap="round"/>
+  <!-- Текст «ТОЧКА» — чёрный жирный -->
+  <text x="40" y="27" font-family="Inter, Manrope, Arial, sans-serif" font-size="22" font-weight="800" fill="#1a1a1a">ТОЧКА</text>
+  <!-- Плюс — оранжевый акцент -->
+  <text x="140" y="27" font-family="Inter, Manrope, Arial, sans-serif" font-size="24" font-weight="900" fill="#F97316">+</text>
 </svg>

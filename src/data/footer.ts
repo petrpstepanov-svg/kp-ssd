@@ -19,12 +19,16 @@ export const footerDetails: {
         {
             text: "Цены",
             url: "#pricing"
+        },
+        {
+            text: "О нас",
+            url: "#about"
         }
     ],
     email: '',
-    telephone: '+7 (908) 055-55-55',
+    telephone: '+7 921 704-09-66',
     address: 'г. Челябинск, пр. Ленина, 27, стр. 4',
     companyName: 'ООО «ССД»',
-    author: 'Степанов П.П. · Точка+ · Май 2026',
+    author: 'Пётр П. · Точка+ · Май 2026',
     socials: {}
 }
