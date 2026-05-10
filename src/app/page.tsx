@@ -9,6 +9,7 @@ import Benefits from "@/components/Benefits/Benefits";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import CTA from "@/components/CTA";
+import FloatingNav from "@/components/FloatingNav";
 import { pricingData } from "@/data/pricingNew";
 
 const HomePage: React.FC = () => {
@@ -34,6 +35,8 @@ const HomePage: React.FC = () => {
 
         <CTA />
       </Container>
+
+      <FloatingNav />
     </>
   );
 };

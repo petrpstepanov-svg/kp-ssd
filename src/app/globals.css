@@ -378,3 +378,43 @@ section[id="about"] > div > div > *,
         hover:bg-orange-600
         hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/25;
 }
+
+/* ====== Плавающая навигация по якорям ====== */
+
+/* Контейнер навигации */
+.floating-nav {
+    @apply fixed right-4 top-1/2 -translate-y-1/2 z-40
+        hidden lg:flex flex-col items-end gap-3;
+}
+
+/* Кнопка секции */
+.floating-nav-item {
+    @apply relative flex items-center justify-end
+        bg-transparent border-none cursor-pointer p-0
+        outline-none focus:outline-none;
+}
+
+/* Обёртка точки */
+.floating-nav-dot-wrapper {
+    @apply flex items-center justify-center w-5 h-5;
+}
+
+/* Точка */
+.floating-nav-dot {
+    @apply block rounded-full;
+    width: 8px;
+    height: 8px;
+}
+
+/* Активная точка */
+.floating-nav-dot-active {
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+}
+
+/* Подсказка (label) */
+.floating-nav-label {
+    @apply absolute right-7 whitespace-nowrap
+        text-xs font-medium text-gray-500
+        bg-white px-2.5 py-1 rounded-lg shadow-sm border border-gray-100
+        pointer-events-none;
+}
