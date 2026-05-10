@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import PilotProject from "@/components/PilotProject";
+import Results from "@/components/Results";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing/Pricing";
 import FAQ from "@/components/FAQ";
@@ -14,6 +15,7 @@ const HomePage: React.FC = () => {
     <>
       <Hero />
       <PilotProject />
+      <Results />
       <Container>
         <Benefits />
 
