@@ -217,3 +217,57 @@ section[id="about"] > div > div > *,
     transition-all duration-300
     hover:-translate-y-1 hover:shadow-md hover:border-orange-200;
 }
+
+/* ====== Блок 5: Forecast premium enhancements ====== */
+
+/* Карточка метрики прогноза */
+.forecast-metric-card {
+  @apply rounded-2xl bg-white border border-gray-100 shadow-sm
+    px-4 py-5 md:px-6 md:py-6 text-center
+    border-l-4 border-l-orange-400
+    transition-all duration-300
+    hover:-translate-y-1 hover:shadow-md;
+}
+
+/* Акцентная карточка метрики (∞) */
+.forecast-metric-card-accent {
+  @apply bg-orange-50 border-orange-200 border-l-orange-500
+    shadow-md hover:shadow-lg;
+}
+
+/* Акцент-плашка «Яндекс Карты» */
+.forecast-accent-card {
+  @apply rounded-2xl border border-orange-200
+    bg-gradient-to-r from-orange-50 to-white
+    px-6 py-5 md:px-8 md:py-6
+    border-l-4 border-l-orange-400;
+}
+
+/* Мини-карточка «Синергия» */
+.forecast-synergy-card {
+  @apply rounded-xl bg-gray-50 border border-gray-100
+    px-5 py-4 md:px-6 md:py-5
+    border-l-4 border-l-orange-400;
+}
+
+/* Итоговая карточка прогноза */
+.forecast-conclusion-card {
+  @apply rounded-2xl border border-orange-200
+    bg-gradient-to-r from-orange-50 to-white
+    px-6 py-5 md:px-8 md:py-6
+    border-l-4 border-l-orange-400
+    max-w-3xl mx-auto;
+}
+
+/* Таймлайн — карточка этапа */
+.timeline-card {
+  @apply rounded-xl bg-white border border-gray-100 shadow-sm p-5 w-full
+    transition-all duration-300
+    hover:-translate-y-1 hover:shadow-md;
+}
+
+/* Таймлайн — акцентная карточка (6 мес) */
+.timeline-card-accent {
+  @apply bg-orange-50 border-orange-200 border-l-4 border-l-orange-400
+    shadow-md hover:shadow-lg;
+}
