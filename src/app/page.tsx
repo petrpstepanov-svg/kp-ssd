@@ -5,6 +5,7 @@ import WhatYouGet from "@/components/WhatYouGet";
 import Forecast from "@/components/Forecast";
 import Testimonials from "@/components/Testimonials";
 import PricingNew from "@/components/PricingNew";
+import AboutUs from "@/components/AboutUs";
 import FAQ from "@/components/FAQ";
 import Benefits from "@/components/Benefits/Benefits";
 import Container from "@/components/Container";
@@ -31,6 +32,8 @@ const HomePage: React.FC = () => {
         >
           <PricingNew />
         </Section>
+
+        <AboutUs />
 
         <Section
           id="testimonials"
