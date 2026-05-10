@@ -24,7 +24,7 @@ const Header: React.FC = () => {
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
                         <Image src="/logo-ssd.svg" alt={siteDetails.siteName} width={36} height={36} className="min-w-fit" />
-                        <span className="manrope text-xl font-semibold text-foreground md:text-white cursor-pointer">
+                        <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
                             {siteDetails.siteName}
                         </span>
                     </Link>
@@ -33,7 +33,7 @@ const Header: React.FC = () => {
                     <ul className="hidden md:flex space-x-6 items-center">
                         {menuItems.map(item => (
                             <li key={item.text}>
-                                <Link href={item.url} className="text-white/80 hover:text-white transition-colors">
+                                <Link href={item.url} className="text-foreground hover:text-foreground-accent transition-colors">
                                     {item.text}
                                 </Link>
                             </li>

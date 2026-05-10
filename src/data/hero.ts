@@ -16,6 +16,5 @@ export const heroDetails = {
     text: '+7 (921) 704-09-66',
     href: 'tel:+79217040966',
   },
-  mainImage: '/photo-4.jpg',
   screenshotImage: '/top1-screenshot.jpg',
 }
