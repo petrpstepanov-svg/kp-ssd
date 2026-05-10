@@ -1,4 +1,13 @@
-import { FiLayout, FiMapPin, FiSearch, FiTarget, FiTrendingUp, FiUsers, FiCode, FiCheckCircle } from "react-icons/fi";
+import {
+    HiComputerDesktop,
+    HiMapPin,
+    HiMagnifyingGlass,
+    HiCursorArrowRays,
+    HiArrowTrendingUp,
+    HiUserGroup,
+    HiCodeBracket,
+    HiCheckCircle
+} from "react-icons/hi2";
 
 import { IBenefit } from "@/types"
 
@@ -10,17 +19,17 @@ export const benefits: IBenefit[] = [
             {
                 title: "Эвакуация, аварийный комиссар, техпомощь",
                 description: "Отдельная страница для каждого направления с тарифами и описанием.",
-                icon: <FiLayout size={26} />
+                icon: <HiComputerDesktop className="w-6 h-6" />
             },
             {
                 title: "Конверсия в заявку с первого визита",
                 description: "Прозрачные тарифы и кнопка «Позвонить» на видном месте.",
-                icon: <FiTarget size={26} />
+                icon: <HiCursorArrowRays className="w-6 h-6" />
             },
             {
                 title: "Мобильная адаптация",
                 description: "90% клиентов звонят с телефона — сайт оптимизирован под мобильные.",
-                icon: <FiUsers size={26} />
+                icon: <HiUserGroup className="w-6 h-6" />
             }
         ],
         imageSrc: "/photo-1.jpg"
@@ -32,17 +41,17 @@ export const benefits: IBenefit[] = [
             {
                 title: "Полный бизнес-профиль",
                 description: "Все услуги, описание, УТП, 10–15 фотографий техники.",
-                icon: <FiMapPin size={26} />
+                icon: <HiMapPin className="w-6 h-6" />
             },
             {
                 title: "Система работы с отзывами",
                 description: "Шаблоны ответов, стимулирование, рост рейтинга.",
-                icon: <FiCheckCircle size={26} />
+                icon: <HiCheckCircle className="w-6 h-6" />
             },
             {
                 title: "Регулярные публикации",
                 description: "Акции и публикации для поддержания активности профиля.",
-                icon: <FiTrendingUp size={26} />
+                icon: <HiArrowTrendingUp className="w-6 h-6" />
             }
         ],
         imageSrc: "/photo-3.jpg"
@@ -54,17 +63,17 @@ export const benefits: IBenefit[] = [
             {
                 title: "SEO-оптимизация",
                 description: "Метатеги, микроразметка, 200+ ключевых запросов, контент-маркетинг.",
-                icon: <FiSearch size={26} />
+                icon: <HiMagnifyingGlass className="w-6 h-6" />
             },
             {
                 title: "Яндекс Директ",
                 description: "Две кампании: эвакуация + аварийный комиссар. Только Челябинск.",
-                icon: <FiTarget size={26} />
+                icon: <HiCursorArrowRays className="w-6 h-6" />
             },
             {
                 title: "Окупаемость 1:5",
                 description: "Постоянная оптимизация, снижение стоимости клика, рост ROI.",
-                icon: <FiCode size={26} />
+                icon: <HiCodeBracket className="w-6 h-6" />
             }
         ],
         imageSrc: "/top1-screenshot.jpg"
