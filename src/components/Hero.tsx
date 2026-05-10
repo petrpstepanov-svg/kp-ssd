@@ -17,19 +17,21 @@ const Hero: React.FC = () => {
       <div className="relative max-w-6xl mx-auto w-full">
 
         {/* Бейдж — на ПК слева, на мобильном по центру */}
-        <div className="lg:text-left text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
-            className="inline-block rounded-full border border-orange-200 bg-orange-50 px-4 py-1.5 text-sm font-medium text-orange-700"
-          >
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}
+          className="text-center lg:text-left"
+        >
+          <span className="inline-block rounded-full border border-orange-200 bg-orange-50 px-4 py-1.5 text-sm font-medium text-orange-700">
             {heroDetails.badge}
-          </motion.span>
-        </div>
+          </span>
+        </motion.div>
 
-        {/* Двухколоночная часть — на ПК row, на мобильном col */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 mt-8">
+        {/* Двухколоночная часть */}
+        {/* items-start на ПК — чтобы мокап можно было опустить через mt */}
+        {/* items-center на мобильном — центрирование */}
+        <div className="flex flex-col lg:flex-row lg:items-start items-center gap-12 lg:gap-16 mt-8">
 
           {/* ЛЕВАЯ КОЛОНКА — текст */}
           <div className="lg:w-[58%] lg:pr-8 lg:text-left text-center">
@@ -104,24 +106,37 @@ const Hero: React.FC = () => {
           </div>
 
           {/* ПРАВАЯ КОЛОНКА — мокап телефона */}
+          {/* lg:mt-20 — ФИКС ИЕРАРХИИ: мокап ниже заголовка, на уровне статистики */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
-            className="lg:w-[42%] lg:pl-8 flex flex-col items-center"
+            transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
+            className="lg:w-[42%] lg:pl-8 lg:mt-20 flex flex-col items-center"
           >
-            <div className="rounded-[2rem] border-[8px] border-gray-900 shadow-2xl overflow-hidden bg-gray-900 w-64 md:w-80">
-              <Image
-                src={heroDetails.screenshotImage}
-                width={320}
-                height={569}
-                quality={100}
-                unoptimized={true}
-                alt="ТОП-1 в Яндекс — скриншот результата поиска «эвакуатор челябинск»"
-                className="rounded-[1.5rem] w-full h-auto object-cover"
-              />
+            {/* Контейнер мокапа — relative для позиционирования бейджа */}
+            <div className="relative">
+              <div className="rounded-[2rem] border-[8px] border-gray-900 shadow-2xl overflow-hidden bg-gray-900 w-64 md:w-80">
+                <Image
+                  src={heroDetails.screenshotImage}
+                  width={320}
+                  height={569}
+                  quality={100}
+                  unoptimized={true}
+                  alt="ТОП-1 в Яндекс — скриншот результата поиска «эвакуатор челябинск»"
+                  className="rounded-[1.5rem] w-full h-auto object-cover"
+                />
+              </div>
+
+              {/* ФИКС ИЕРАРХИИ №2: Оранжевый бейдж-маркер «✓ ТОП-1» */}
+              {/* «Печать подтверждения» — связывает мокап с карточкой ТОП-1 в статистике */}
+              <div className="absolute -bottom-3 -right-3 z-10">
+                <span className="inline-flex items-center gap-1 rounded-full bg-orange-500 text-white text-xs font-bold px-3 py-1.5 shadow-lg">
+                  ✓ ТОП-1
+                </span>
+              </div>
             </div>
-            <p className="text-xs text-gray-400 mt-3 text-center">
+
+            <p className="text-xs text-gray-400 mt-4 text-center">
               Фактический результат поиска в Яндекс
             </p>
           </motion.div>
