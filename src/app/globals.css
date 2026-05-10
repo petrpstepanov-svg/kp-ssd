@@ -52,3 +52,16 @@ h1, h2, h3, h4, h5, h6 {
 .benefit-section:last-of-type > div {
   @apply mb-10;
 }
+
+/* Фоллбэк: контент виден даже без JS.
+   framer-motion при загрузке перезапишет inline-стили своими анимациями. */
+section[id="hero"] > div > *,
+section[id="hero"] > div > div > *,
+section[id="pilot"] > div > *,
+section[id="pilot"] > div > div > *,
+section[id="results"] > div > *,
+section[id="results"] > div > div > *,
+.benefit-section > div {
+  opacity: 1 !important;
+  transform: none !important;
+}

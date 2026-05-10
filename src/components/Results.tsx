@@ -141,7 +141,7 @@ const Results: React.FC = () => {
             {photos.map((photo) => (
               <div
                 key={photo.src}
-                className="flex-1 min-w-0 min-w-[70vw] sm:min-w-0 snap-center sm:snap-none"
+                className="flex-1 min-w-[70vw] sm:min-w-0 snap-center sm:snap-none"
               >
                 <Image
                   src={photo.src}
