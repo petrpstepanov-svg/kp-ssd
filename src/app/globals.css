@@ -65,6 +65,8 @@ section[id="what-you-get"] > div > *,
 section[id="what-you-get"] > div > div > *,
 section[id="forecast"] > div > *,
 section[id="forecast"] > div > div > *,
+section[id="pricing"] > div > *,
+section[id="pricing"] > div > div > *,
 .benefit-section > div {
   opacity: 1 !important;
   transform: none !important;

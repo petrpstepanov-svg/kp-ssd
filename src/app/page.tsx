@@ -4,13 +4,14 @@ import Results from "@/components/Results";
 import WhatYouGet from "@/components/WhatYouGet";
 import Forecast from "@/components/Forecast";
 import Testimonials from "@/components/Testimonials";
-import Pricing from "@/components/Pricing/Pricing";
+import PricingNew from "@/components/PricingNew";
 import FAQ from "@/components/FAQ";
 import Benefits from "@/components/Benefits/Benefits";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import Stats from "@/components/Stats";
 import CTA from "@/components/CTA";
+import { pricingData } from "@/data/pricingNew";
 
 const HomePage: React.FC = () => {
   return (
@@ -26,9 +27,9 @@ const HomePage: React.FC = () => {
         <Section
           id="pricing"
           title="Стоимость"
-          description="Полный комплекс интернет-маркетинга для двух направлений: эвакуация и аварийный комиссар."
+          description={pricingData.subheading}
         >
-          <Pricing />
+          <PricingNew />
         </Section>
 
         <Section
